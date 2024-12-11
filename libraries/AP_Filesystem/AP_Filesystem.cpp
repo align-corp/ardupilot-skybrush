@@ -260,12 +260,6 @@ void AP_Filesystem::unmount(void)
     return LOCAL_BACKEND.fs.unmount();
 }
 
-// if non-zero size at which syncs should be peformed, only used by flash fs
-uint32_t AP_Filesystem::get_sync_size(void) const
-{
-    return LOCAL_BACKEND.fs.get_sync_size();
-}
-
 /*
   load a file to memory as a single chunk. Use only for small files
  */
