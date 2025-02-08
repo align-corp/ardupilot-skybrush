@@ -58,6 +58,7 @@ extern const AP_HAL::HAL& hal;
 
 #define JEDEC_ID_WINBOND_W25N01GV      0xEFAA21
 #define JEDEC_ID_WINBOND_W25N02KV      0xEFAA22
+#define JEDEC_ID_WINBOND_W25N01KV      0xEFAE21
 
 void AP_Logger_W25NXX::Init()
 {
@@ -133,6 +134,7 @@ bool AP_Logger_W25NXX::getSectorCount(void)
 
     switch (id) {
     case JEDEC_ID_WINBOND_W25N01GV:
+    case JEDEC_ID_WINBOND_W25N01KV:
         df_PageSize = 2048;
         df_PagePerBlock = 64;
         df_PagePerSector = 64; // make sectors equivalent to block
